@@ -1,0 +1,40 @@
+{%- comment -%}
+Usage: Pass product key from site.data.products
+{% include amazon_link.html product="raspberry_pi_4_4gb" %}
+{%- endcomment -%}
+
+{%- assign product_key = include.product -%}
+{%- assign product = site.data.products[product_key] -%}
+{%- assign tag = site.affiliates.amazon_tag -%}
+
+{%- if product -%}
+  {%- assign url_param = product.url -%}
+  {%- assign asin_param = product.asin -%}
+  {%- assign text_param = product.text -%}
+{%- else -%}
+  {%- assign url_param = include.url -%}
+  {%- assign asin_param = include.asin -%}
+  {%- assign text_param = include.text -%}
+{%- endif -%}
+
+{%- if url_param -%}
+  {%- assign base = url_param -%}
+{%- elsif asin_param -%}
+  {%- assign base = 'https://www.amazon.com/dp/' | append: asin_param -%}
+{%- else -%}
+  {%- assign base = '' -%}
+{%- endif -%}
+
+{%- if base and tag and base != blank and tag != blank -%}
+  {%- if base contains 'tag=' or base contains 'amzn.to' -%}
+    {%- assign href = base -%}
+  {%- elsif base contains '?' -%}
+    {%- assign href = base | append: '&tag=' | append: tag -%}
+  {%- else -%}
+    {%- assign href = base | append: '?tag=' | append: tag -%}
+  {%- endif -%}
+{%- else -%}
+  {%- assign href = base -%}
+{%- endif -%}
+
+<a href="{{ href }}" rel="sponsored noopener nofollow" target="_blank">{{ text_param }}</a>

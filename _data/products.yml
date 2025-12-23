@@ -1,0 +1,38 @@
+# Product link data for affiliate links
+# Provide either `asin` (preferred) or full `url`. `text` controls anchor text.
+# Example:
+# raspberry_pi_4_4gb:
+#   asin: B07TC2BK1X
+#   text: Raspberry Pi 4 (4GB)
+
+home_assistant_green:
+  url: "https://amzn.to/3L0wydS"
+  text: "Home Assistant Green"
+
+raspberry_pi_4_4gb:
+  asin: "B0CK3L9WD3"
+  text: "Raspberry Pi 4 (4GB)"
+
+usb_c_power_supply:
+  asin: "B0CLV6WB4L"
+  text: "USB‑C 5V/3A Power Supply"
+
+microsd_128gb_a2:
+  asin: "B0B7NV73PJ"
+  text: "128GB microSD (A2)"
+
+ssd_enclosure_kit:
+  asin: "B00OJ3UJ2S"
+  text: "USB 3.0 SSD + Enclosure"
+
+zigbee_dongle:
+  asin: "B0B6P22YJC"
+  text: "Zigbee 3.0 USB Dongle"
+
+zwave_stick:
+  asin: "B0BW171KP3"
+  text: "Z‑Wave 700 USB Stick"
+
+kasa_smart_plug:
+  asin: "B07RCNB2L3"
+  text: "Kasa Smart Plug"

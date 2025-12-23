@@ -224,3 +224,7 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
+
+# Affiliate settings (fill in your codes)
+affiliates:
+  amazon_tag: "oneofthegeeks04-20" # Amazon Associates tracking ID
